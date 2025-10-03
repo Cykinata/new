@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atlasyn - Plan Your Next Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="logo">Atlasyn</div>
+      <nav>
+        <a href="#discover">Discover</a>
+        <a href="#stays">Stays</a>
+        <a href="#rides">Rides</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#planner">Trip Planner</a>
+      </nav>
+      <button class="primary-btn">Sign In</button>
+    </header>
+
+    <main>
+      <section class="hero" id="discover">
+        <div class="hero-content">
+          <h1>Design trips that feel like they were made for you.</h1>
+          <p>
+            Book flights, stays, cars, unique experiences, and events all in one
+            place. Atlasyn curates the perfect itinerary and keeps your budget
+            on track.
+          </p>
+          <form class="trip-form" id="trip-form">
+            <div class="form-row">
+              <label>
+                Destination
+                <input
+                  type="text"
+                  name="destination"
+                  placeholder="Try Lisbon, Tokyo, or Banff"
+                  required
+                />
+              </label>
+              <label>
+                Dates
+                <input type="date" name="startDate" required />
+              </label>
+              <label>
+                Return
+                <input type="date" name="endDate" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                Travelers
+                <input
+                  type="number"
+                  name="travelers"
+                  min="1"
+                  value="2"
+                  required
+                />
+              </label>
+              <label>
+                Trip Focus
+                <select name="focus">
+                  <option value="relax">Relax &amp; Recharge</option>
+                  <option value="adventure">Adventure</option>
+                  <option value="culture">Culture &amp; History</option>
+                  <option value="food">Culinary</option>
+                </select>
+              </label>
+              <label>
+                Budget (USD)
+                <input
+                  type="range"
+                  name="budget"
+                  id="budget"
+                  min="500"
+                  max="10000"
+                  step="100"
+                  value="3000"
+                />
+                <span class="budget-value" id="budget-value">$3,000</span>
+              </label>
+            </div>
+            <button type="submit" class="primary-btn">See curated plans</button>
+          </form>
+        </div>
+        <div class="hero-card">
+          <h2>Atlasyn spotlight</h2>
+          <ul>
+            <li>
+              <strong>Summer Soundscape Festival</strong>
+              <span>Barcelona &bull; July 12-15</span>
+            </li>
+            <li>
+              <strong>Hidden Cafés Walking Tour</strong>
+              <span>Lisbon &bull; Daily departures</span>
+            </li>
+            <li>
+              <strong>Wine &amp; Canvas Retreat</strong>
+              <span>Tuscany &bull; August 21-25</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="results" id="planner" aria-live="polite">
+        <div class="results-header">
+          <h2>Your curated itinerary</h2>
+          <p>Adjust the filters to explore tickets, stays, rides, and more.</p>
+        </div>
+        <div class="result-tabs" role="tablist">
+          <button class="tab active" data-tab="flights" role="tab">Flights</button>
+          <button class="tab" data-tab="stays" role="tab">Stays</button>
+          <button class="tab" data-tab="cars" role="tab">Cars</button>
+          <button class="tab" data-tab="activities" role="tab">Things to do</button>
+          <button class="tab" data-tab="events" role="tab">Events</button>
+        </div>
+        <div class="cards" id="results-cards"></div>
+      </section>
+
+      <section class="collections" id="stays">
+        <div class="section-heading">
+          <h2>Stay collections</h2>
+          <p>Design-led stays curated for every type of traveler.</p>
+        </div>
+        <div class="card-grid">
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Modern hotel room with city view" />
+            <div class="card-body">
+              <h3>Skyline Sanctuaries</h3>
+              <p>Glass-clad suites in vibrant city centers with concierge-crafted itineraries.</p>
+            </div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Cozy cabin in the mountains" />
+            <div class="card-body">
+              <h3>Cabin Hideaways</h3>
+              <p>Fireplace nights and sunrise trailheads tucked inside national parks.</p>
+            </div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Beach bungalow" />
+            <div class="card-body">
+              <h3>Blue Horizon Villas</h3>
+              <p>Private plunge pools, in-villa chefs, and curated boat days on turquoise seas.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="collections" id="rides">
+        <div class="section-heading">
+          <h2>Ride ready in minutes</h2>
+          <p>Reserve eco-friendly cars, vans for the crew, or chauffeured classics.</p>
+        </div>
+        <div class="card-grid">
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80" alt="Electric car charging" />
+            <div class="card-body">
+              <h3>Electric explorers</h3>
+              <p>Zero-emission rides matched with charging stops on your route.</p>
+            </div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=800&q=80" alt="Luxury car interior" />
+            <div class="card-body">
+              <h3>Chauffeur classics</h3>
+              <p>Arrive in style with vetted drivers and on-demand concierge support.</p>
+            </div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1517445312885-598c5a82f466?auto=format&fit=crop&w=800&q=80" alt="SUV in the desert" />
+            <div class="card-body">
+              <h3>Adventure fleet</h3>
+              <p>Rugged SUVs prepped with roof racks, trail maps, and local guides.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="collections" id="experiences">
+        <div class="section-heading">
+          <h2>Experiences designed to delight</h2>
+          <p>Hands-on moments curated around your travel personality.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="time">Morning</span>
+            <p>Wake up to a rooftop yoga session followed by a chef-led market tour.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="time">Afternoon</span>
+            <p>Choose between a coastal sailing lesson or mountain canyoning adventure.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="time">Evening</span>
+            <p>Secure front-row tickets to exclusive concerts or immersive theater.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-card">
+        <h3>Atlasyn</h3>
+        <p>Everything you need for the trip you&apos;ve been dreaming about.</p>
+      </div>
+      <div class="footer-card">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Travel requirements</a></li>
+          <li><a href="#">Flexible booking</a></li>
+        </ul>
+      </div>
+      <div class="footer-card">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-card">
+        <h4>Stay in the loop</h4>
+        <form class="newsletter">
+          <input type="email" placeholder="Email address" aria-label="Email" />
+          <button type="submit" class="primary-btn">Join</button>
+        </form>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
